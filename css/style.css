@@ -23,3 +23,42 @@
   align-items: center;
     height: 100vh;
 }
+#home #quotes{
+  width: 60%;
+  padding: 2%;
+  background-color: rgba(245, 245, 245, 0.737);
+  border-radius: 5px;
+  color: #084095;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  /* letter-spacing: 1px; */
+  word-spacing: 2px;
+}
+#home #quotes h3{
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 600px) {
+#home #quotes{
+  width: 80%;
+}#home #quotes h3{
+  font-size: 1.2rem;
+}
+}
+/* About-us */
+#About-us{
+  padding: 3% 2%;
+}
+#About-us h3{
+  text-align: center;
+  margin-bottom: 2%;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#About-us p{
+word-spacing: 2px;
+font-size: 1.1rem;
+color: rgb(99, 99, 99);
+}
+@media only screen and (max-width: 600px) {
+#About-us p{
+  font-size: 1rem;
+}
+}
