@@ -13,5 +13,13 @@
 }
 /* home */
 #home{
+  background: url("../images/pexels-artem-podrez-7048012.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
     height: 100vh;
 }
