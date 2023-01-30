@@ -21,7 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 #home #quotes{
   width: 60%;
@@ -47,12 +47,13 @@
 #About-us{
   padding: 3% 2%;
 }
-#About-us h3{
+#About-us h3, #your-responsibility h3{
   text-align: center;
   margin-bottom: 2%;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 #About-us p{
+  text-align:center;
 word-spacing: 2px;
 font-size: 1.1rem;
 color: rgb(99, 99, 99);
@@ -61,4 +62,12 @@ color: rgb(99, 99, 99);
 #About-us p{
   font-size: 1rem;
 }
+}
+/* #your-responsibility */
+#your-responsibility{
+  padding: 3%;
+  background-color: #D4D1CB;
+}
+#your-responsibility img{
+  border-radius: 5px;
 }
