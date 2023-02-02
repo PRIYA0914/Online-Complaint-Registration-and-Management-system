@@ -45,7 +45,7 @@
 }
 /* About-us */
 #About-us{
-  padding: 3% 2%;
+  padding: 4% 2%;
 }
 #About-us h3, #your-responsibility h3{
   text-align: center;
@@ -70,4 +70,30 @@ color: rgb(99, 99, 99);
 }
 #your-responsibility img{
   border-radius: 5px;
+}
+/* footer */
+#footer{
+  padding: 2%;
+  display: flex;
+  justify-content:space-between;
+      flex-wrap: wrap;
+
+}
+#footer-socialmedia{
+    display: flex;
+    flex-wrap: wrap;
+  justify-content:space-between;
+  gap: 10px;
+  cursor: pointer;
+  color:#595856 ;
+  font-weight: 500;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#footer-socialmedia p:hover{
+  color: rgb(0, 0, 0);
+}
+#footer-logo h3{
+  font-style: italic;
+  font-weight: 800;
+  color: blue;
 }
