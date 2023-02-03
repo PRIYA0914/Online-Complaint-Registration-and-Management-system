@@ -12,7 +12,7 @@
   text-decoration: underline;
 }
 /* home */
-#home{
+#home {
   background: url("../images/home-bg.jpg");
   background-position: center;
   background-size: cover;
@@ -21,79 +21,84 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    min-height: 100vh;
+  min-height: 100vh;
 }
-#home #quotes{
+#home #quotes {
   width: 60%;
   padding: 2%;
   background-color: rgba(245, 245, 245, 0.737);
   border-radius: 5px;
   color: #084095;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   /* letter-spacing: 1px; */
   word-spacing: 2px;
 }
-#home #quotes h3{
+#home #quotes h3 {
   font-size: 1.5rem;
 }
 @media only screen and (max-width: 600px) {
-#home #quotes{
-  width: 80%;
-}#home #quotes h3{
-  font-size: 1.2rem;
-}
+  #home #quotes {
+    width: 80%;
+  }
+  #home #quotes h3 {
+    font-size: 1.2rem;
+  }
 }
 /* About-us */
-#About-us{
+#About-us {
   padding: 4% 2%;
 }
-#About-us h3, #your-responsibility h3{
+#About-us h3,
+#your-responsibility h3 {
   text-align: center;
   margin-bottom: 2%;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-#About-us p{
-  text-align:center;
-word-spacing: 2px;
-font-size: 1.1rem;
-color: rgb(99, 99, 99);
+#About-us p {
+  text-align: center;
+  word-spacing: 2px;
+  font-size: 1.1rem;
+  color: rgb(99, 99, 99);
 }
 @media only screen and (max-width: 600px) {
-#About-us p{
-  font-size: 1rem;
-}
+  #About-us p {
+    font-size: 1rem;
+  }
 }
 /* #your-responsibility */
-#your-responsibility{
+#your-responsibility {
   padding: 3%;
-  background-color: #D4D1CB;
+  background-color: #d4d1cb;
 }
-#your-responsibility img{
+#your-responsibility img {
   border-radius: 5px;
 }
 /* footer */
-#footer{
-  padding: 2%;
+#footer {
+  padding-top: 3%;
   display: flex;
-  justify-content:space-between;
-      flex-wrap: wrap;
-
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-#footer-socialmedia{
-    display: flex;
-    flex-wrap: wrap;
-  justify-content:space-between;
+#footer-socialmedia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 10px;
   cursor: pointer;
-  color:#595856 ;
+  color: #595856;
   font-weight: 500;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-#footer-socialmedia p:hover{
+#footer-socialmedia p:hover {
   color: rgb(0, 0, 0);
 }
-#footer-logo h3{
+#footer-logo h3 {
   font-style: italic;
   font-weight: 800;
   color: blue;
+}
+.copyright{
+  text-align: center;
+  padding-bottom: 1%;
 }
