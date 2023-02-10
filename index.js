@@ -16,7 +16,9 @@ function database_connection() {
   try {
         mongoose.set("strictQuery", false);
 
-    mongoose.connect(uri)
+    mongoose.connect(uri,()=>{
+      console.log("Successfully connected to DB");
+    })
 
   } catch (error) {
     console.log(`error in database connection ${error}`);
@@ -43,4 +45,15 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 //   } catch (error) {
 //     response.status(500).send(error);
 //   }
+// });
+
+// app.post("/add_user", async (request, response) => {
+//     const user = new userModel(request.body);
+  
+//     try {
+//       await user.save();
+//       response.send(user);
+//     } catch (error) {
+//       response.status(500).send(error);
+//     }
 // });
