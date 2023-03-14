@@ -46,7 +46,7 @@
 }
 /* About-us */
 #About-us {
-  padding: 4% 2%;
+  padding: 5% 4%;
 }
 #About-us h3,
 #your-responsibility h3 {
@@ -67,8 +67,8 @@
 }
 /* #your-responsibility */
 #your-responsibility {
-  padding: 3%;
-  background-color: #d4d1cb;
+  padding: 5%;
+  background-color: #ecececa0;
 }
 #your-responsibility img {
   border-radius: 5px;

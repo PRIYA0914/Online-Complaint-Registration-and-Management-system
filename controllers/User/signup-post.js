@@ -7,7 +7,8 @@ exports.signup_post = async(req, res) => {
   const user = new User({
     username: req.body.username,
     password: req.body.password,
-    email:req.body.email
+    email:req.body.email,
+    userId:Math.random().toString().substr(2, 6)
   });
   user.save((err, docs) => {
     if (!err) {
