@@ -5,5 +5,6 @@ const userSchema = new mongoose.Schema({
     unique: true //  must be unique
   },
   password: String,
+  email:String
 });
 module.exports=mongoose.model("UserAuth",userSchema)

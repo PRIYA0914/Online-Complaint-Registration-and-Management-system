@@ -7,6 +7,7 @@ exports.signup_post = async(req, res) => {
   const user = new User({
     username: req.body.username,
     password: req.body.password,
+    email:req.body.email
   });
   user.save((err, docs) => {
     if (!err) {
@@ -24,7 +25,7 @@ exports.signup_post = async(req, res) => {
   });
   } else {
      res.write(" <h1>User Name already created, please try another one.</h1>");
-     res.write("<p><a href='/sub-pages/user/signup.html'>Please Login</a></p>");
+     res.write("<p><a href='/sub-pages/user/signup.html'>Please Signup</a></p>");
   }
 
 
