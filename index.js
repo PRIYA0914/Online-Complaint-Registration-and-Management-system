@@ -32,7 +32,7 @@ database_connection()
 app.use("/", require("./routes/home"));
 app.use("/user/login", require("./routes/User/login-post"));
 app.use("/user/signup", require("./routes/User/signup-post"));
-app.use("/user/dashboard", require("./routes/User/dashboard"));
+app.use("/user", require("./routes/User/dashboard"));
 
 app.use("/officer/login", require("./routes/Officer/login-post"));
 app.use("/officer/signup", require("./routes/Officer/signup-post"));

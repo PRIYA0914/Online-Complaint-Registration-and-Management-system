@@ -17,6 +17,6 @@ module.exports = async function (req, res, next) {
       next();
     }
   } catch (error) {
-    res.send("Access Denied");
+    res.redirect("/sub-pages/user/login.html");
   }
 };

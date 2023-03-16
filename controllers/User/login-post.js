@@ -13,7 +13,7 @@ exports.login_post = (req, res) => {
           // res.send("Valid Password")
           const token = Token.tokenGenerator(docs.username); // it will generate token
           res.cookie("jwt", token); // storing token in cookie
-          res.redirect("/user/dashboard");
+          res.redirect(`/user/${docs.userId}`);
         } else {
           res.send("inValid Password");
         }
