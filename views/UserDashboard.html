@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Online-Complaint-Registration-and-Management-system</title>
+    <!-- icon -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <!-- css -->
+    <style>
+      nav .acc-name {
+        padding: 10px;
+        border-radius: 50%;
+        background-color: rgb(255, 0, 51);
+        border: 0;
+        text-transform: uppercase;
+        color: aliceblue;
+        font-weight: 600;
+      }
+
+      nav {
+        border: 1px solid rgba(0, 0, 255, 0.367);
+      }
+
+      .complaints {
+        padding: 1% 23%;
+        border-radius: 10px;
+        background: #e7eefd4e;
+        box-shadow: 20px 20px 40px #bababa, -20px -20px 40px #ffffff;
+      }
+
+      .complaints .complaint {
+        margin: 5% 0;
+      }
+
+      body {
+        padding: 1%;
+      }
+
+      .add-btn {
+        font-size: 30px;
+        font-weight: 500;
+        border-radius: 50%;
+        padding: 0px 10px;
+        padding-bottom: 5px;
+        color: whitesmoke;
+        background-color: rgb(70, 70, 255);
+        border: 0;
+        float: right;
+      }
+      .feedback{
+        cursor: pointer;
+      }
+      .feedback textarea, .feedback .feedback-btn{
+        display: none;
+      }
+     
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item pt-1">
+              <a
+                class="nav-link active"
+                href="#About-us"
+                style="font-weight: 500"
+                >Add Complaint</a
+              >
+            </li>
+            <li class="nav-item mx-4"><button class="acc-name">pa</button></li>
+          </ul>
+          <a href="#">
+            <button class="btn btn-outline-dark" type="submit">Logout</button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="complaints">
+        <div class="complaint">
+          <div class="card" style="width: 22rem">
+            <img
+              src="https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Water Pipe Leackage</h5>
+              <p class="card-text">
+                <span style="font-weight: 500">Address : </span> Some quick
+                example text to build on the card title and make up the bulk of
+                the card's content. <a href=""><i class="bi bi-geo-alt"></i></a>
+              </p>
+              <button type="button" class="btn btn-outline-dark">
+                Approval : <span>Yes</span>
+                <!-- ~, yes,no -->
+              </button>
+              <button type="button" class="btn btn-outline-success">
+                Work Status : <span>started</span>
+                <!-- started,finished -->
+              </button>
+              <h6 class="my-3">
+                Officer Appointed :
+                <span style="font-weight: 400"
+                  ><a href="" style="text-decoration: none">
+                    <!-- Redirect to Officers Profile -->
+                    Parvesh Ahamed
+                  </a></span
+                >
+              </h6>
+              <div class="feedback">
+                <p>Feedback : <i class="bi bi-pen-fill"></i></p>
+                <form action="" method="post">  <textarea required name="" id="" cols="35" rows="5"></textarea>
+                <button type="submit" class="btn btn-primary btn-sm feedback-btn">Send</button></form>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="addbtn-container container">
+      <button class="add-btn">+</button>
+    </div>
+    <script>
+        let feedback=document.querySelector(".feedback p")
+                let feedback_btn=document.querySelector(".feedback .feedback-btn")
+
+        let feedback_form=document.querySelector(".feedback textarea")
+        feedback.addEventListener("click",()=>{
+            feedback_form.style.display="unset"
+                        feedback_btn.style.display="unset"
+                                                feedback_btn.style.float="right"
+
+
+        })
+    </script>
+  </body>
+</html>
