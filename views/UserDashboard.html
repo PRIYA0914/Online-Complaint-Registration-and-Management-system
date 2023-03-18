@@ -106,6 +106,9 @@
     <div class="container d-flex justify-content-center mt-5">
       <div class="complaints">
         <div class="complaint">
+          <div class="date">
+            <h6 style="letter-spacing: 1px; font-size: 12px;color: gray;">21/04/2003</h6>
+          </div>
           <div class="card" style="width: 22rem">
             <img
               src="https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -170,7 +173,7 @@
 
       let feedback_form = document.querySelector(".feedback textarea");
       feedback.addEventListener("click", () => {
-      // toogle feedbackform
+        // toogle feedbackform
         if (feedback_form.style.display === "none") {
           feedback_form.style.display = "unset";
 
