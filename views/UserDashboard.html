@@ -65,13 +65,9 @@
         border: 0;
         float: right;
       }
-      .feedback{
+      .feedback {
         cursor: pointer;
       }
-      .feedback textarea, .feedback .feedback-btn{
-        display: none;
-      }
-     
     </style>
   </head>
 
@@ -142,9 +138,23 @@
               </h6>
               <div class="feedback">
                 <p>Feedback : <i class="bi bi-pen-fill"></i></p>
-                <form action="" method="post">  <textarea required name="" id="" cols="35" rows="5"></textarea>
-                <button type="submit" class="btn btn-primary btn-sm feedback-btn">Send</button></form>
-              
+                <form action="" method="post">
+                  <textarea
+                    style="display: none"
+                    required
+                    name=""
+                    id=""
+                    cols="35"
+                    rows="5"
+                  ></textarea>
+                  <button
+                    style="display: none"
+                    type="submit"
+                    class="btn btn-primary btn-sm feedback-btn"
+                  >
+                    Send
+                  </button>
+                </form>
               </div>
             </div>
           </div>
@@ -155,17 +165,23 @@
       <button class="add-btn">+</button>
     </div>
     <script>
-        let feedback=document.querySelector(".feedback p")
-                let feedback_btn=document.querySelector(".feedback .feedback-btn")
+      let feedback = document.querySelector(".feedback p");
+      let feedback_btn = document.querySelector(".feedback .feedback-btn");
 
-        let feedback_form=document.querySelector(".feedback textarea")
-        feedback.addEventListener("click",()=>{
-            feedback_form.style.display="unset"
-                        feedback_btn.style.display="unset"
-                                                feedback_btn.style.float="right"
+      let feedback_form = document.querySelector(".feedback textarea");
+      feedback.addEventListener("click", () => {
+      // toogle feedbackform
+        if (feedback_form.style.display === "none") {
+          feedback_form.style.display = "unset";
 
+          feedback_btn.style.display = "unset";
+          feedback_btn.style.float = "right";
+        } else {
+          feedback_form.style.display = "none";
 
-        })
+          feedback_btn.style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>
