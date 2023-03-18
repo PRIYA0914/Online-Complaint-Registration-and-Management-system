@@ -1,5 +1,6 @@
 exports.dashboard=(req,res)=>{
     // res.send("User DashBoard")
     // res.send(req.paras);
-    console.log(req.params.id);
+    // console.log(req.params.id);
+    res.render("UserDashboard")
 }

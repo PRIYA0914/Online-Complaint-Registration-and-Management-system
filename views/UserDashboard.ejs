@@ -51,7 +51,8 @@
       }
 
       body {
-        padding: 1%;
+        padding-top: 1%;
+        padding-bottom: 5%;
       }
 
       .add-btn {
@@ -98,7 +99,9 @@
             <li class="nav-item mx-4"><button class="acc-name">pa</button></li>
           </ul>
           <a href="#">
-            <button class="btn btn-outline-dark" type="submit">Logout</button>
+            <button class="btn btn-outline-dark logout_btn" type="submit">
+              Logout
+            </button>
           </a>
         </div>
       </div>
@@ -107,7 +110,9 @@
       <div class="complaints">
         <div class="complaint">
           <div class="date">
-            <h6 style="letter-spacing: 1px; font-size: 12px;color: gray;">21/04/2003</h6>
+            <h6 style="letter-spacing: 1px; font-size: 12px; color: gray">
+              21/04/2003
+            </h6>
           </div>
           <div class="card" style="width: 22rem">
             <img
@@ -184,6 +189,13 @@
 
           feedback_btn.style.display = "none";
         }
+      });
+      let logout_btn = document.querySelector(".logout_btn");
+      logout_btn.addEventListener("click", () => {
+        console.log("clicked",  document.cookie);
+document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
+location.reload(); // to reload page
+
       });
     </script>
   </body>
