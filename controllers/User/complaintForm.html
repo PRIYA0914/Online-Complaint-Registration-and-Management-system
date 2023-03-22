@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FixIt | Register Complaint</title>
-    <link
-      rel="shortcut icon"
-      href="../../images/logo.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,24 +13,37 @@
       crossorigin="anonymous"
     />
     <style>
-       body{
+      body {
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: whitesmoke;
-       }
-       .container{
+      }
+      .container {
         width: 70%;
         background-color: rgba(255, 255, 255, 0.459);
         border-radius: 10px;
         padding: 5%;
-       }
+      }
     </style>
+    <script>
+      const queryString = new URL(window.location.toLocaleString());
+      // const urlParams = new URLSearchParams(queryString);
+
+      console.log(queryString.pathname);
+      window.onload = function () {
+        document.myform.action = get_action();
+      };
+
+      function get_action() {
+        return queryString.pathname;
+      }
+    </script>
   </head>
   <body>
     <div class="container">
-      <form action="/add-complaint" method="post">
+      <form method="post" name="myform">
         <div class="form-floating mb-3">
           <input
             required
@@ -58,7 +67,7 @@
         <div class="form-floating mb-3">
           <input
             required
-            type="url"
+            type="text"
             class="form-control"
             id="map"
             placeholder="Google map"
@@ -82,11 +91,10 @@
             <div class="input-group mb-3">
               <input type="file" class="form-control" id="photo" />
               <label class="input-group-text" for="photo">Image</label>
-                
             </div>
           </div>
           <div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary submit">
               Register Complaint
             </button>
           </div>
