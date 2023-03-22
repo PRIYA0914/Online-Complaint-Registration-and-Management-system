@@ -33,6 +33,7 @@ app.use("/", require("./routes/home"));
 app.use("/user/login", require("./routes/User/login-post"));
 app.use("/user/signup", require("./routes/User/signup-post"));
 app.use("/user", require("./routes/User/dashboard"));
+app.use("/add-complaint", require("./routes/User/add-complaint"));
 
 app.use("/officer/login", require("./routes/Officer/login-post"));
 app.use("/officer/signup", require("./routes/Officer/signup-post"));
