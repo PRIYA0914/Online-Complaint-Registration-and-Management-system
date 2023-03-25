@@ -64,16 +64,28 @@
           ></textarea>
           <label for="address">Address</label>
         </div>
-        <div class="form-floating mb-3">
-          <input
-            required
-            type="text"
-            class="form-control"
-            id="map"
-            placeholder="Google map"
-          />
-          <label for="map">Google Map URL</label>
+        <div class="row">
+          <div class="col-8">
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="url"
+                class="form-control"
+                id="map"
+                placeholder="Google map"
+              />
+              <label for="map">Google Map URL</label>
+            </div>
+          </div>
+          <div class="col-4 d-flex align-items-center">
+            <a href="https://www.google.com/maps/" target=”_blank”>
+              <button type="button" class="btn btn-outline-info btn-sm">
+                Open Map 🌍
+              </button></a
+            >
+          </div>
         </div>
+
         <div class="row">
           <div class="form-check col-6">
             <input
