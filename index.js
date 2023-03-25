@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser"); // to handle post requests
 const mongoose = require("mongoose");
 const cookieParser=require("cookie-parser") // to store JWT Token in our cookie storage for getting verified in each routes
+const fileUplaod = require("express-fileupload");
+
 const app = express();
 require("dotenv").config(); // for environment variables
 const port = 3000;
@@ -29,6 +31,11 @@ function database_connection() {
   }
 }
 database_connection()
+app.use(
+  fileUplaod({
+    useTempFiles: true,
+  })
+);
 app.use("/", require("./routes/home"));
 app.use("/user/login", require("./routes/User/login-post"));
 app.use("/user/signup", require("./routes/User/signup-post"));
