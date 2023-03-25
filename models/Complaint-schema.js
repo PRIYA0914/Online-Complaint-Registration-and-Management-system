@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const complaintSchema = new mongoose.Schema({
-    userID:String,
+  userID: String,
+  date: String,
   title: String,
   address: String,
   gMapURL: String,
@@ -10,6 +11,6 @@ const complaintSchema = new mongoose.Schema({
   workStatus: String,
   workDoneImageName: String,
   workDoneImageURL: String,
-   approvalStatus: String
+  approvalStatus: String,
 });
-module.exports=mongoose.model("complaint",complaintSchema)
+module.exports = mongoose.model("complaint", complaintSchema);

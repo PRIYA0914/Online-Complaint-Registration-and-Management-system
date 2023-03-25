@@ -6,11 +6,14 @@ cloudinary.config({
   api_key: "274678599356585",
   api_secret: "EL_fj8uawlC4yyVjJ4a0f-v6vzk",
 });
+var today = new Date();
+
 exports.addComplaint = (req, res) => {
   const file = req.files.image;
   cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
     const complaint = new Complaint({
-      userID: req.body.id,
+      userID: req.params.id,
+      date: today.toLocaleDateString("en-GB"),
       title: req.body.complaint,
       address: req.body.address,
       gMapURL: req.body.addressURL,
