@@ -70,7 +70,6 @@
         cursor: pointer;
       }
     </style>
-    
   </head>
 
   <body>
@@ -93,7 +92,6 @@
               <a
                 class="nav-link active"
                 href="/<%=userID%>/register-complaint"
-                
                 style="font-weight: 500"
                 >Add Complaint</a
               >
@@ -172,7 +170,7 @@
       </div>
     </div>
     <div class="addbtn-container container">
-      <button class="add-btn">+</button>
+      <a href="/<%=userID%>/register-complaint"> <button class="add-btn">+</button> </a>
     </div>
     <script>
       let feedback = document.querySelector(".feedback p");
@@ -194,10 +192,10 @@
       });
       let logout_btn = document.querySelector(".logout_btn");
       logout_btn.addEventListener("click", () => {
-        console.log("clicked",  document.cookie);
-document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
-location.reload(); // to reload page
-
+        console.log("clicked", document.cookie);
+        document.cookie =
+          "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
+        location.reload(); // to reload page
       });
     </script>
   </body>

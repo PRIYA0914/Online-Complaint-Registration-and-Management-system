@@ -19,8 +19,8 @@ exports.addComplaint = (req, res) => {
       gMapURL: req.body.addressURL,
       imageName: result.public_id,
       imageURL: result.url,
-      officerAppointed: "",
-      workStatus: "",
+      officerAppointed: "-",
+      workStatus: "-",
       workDoneImageName: "",
       workDoneImageURL: "",
       approvalStatus: "Pending",
@@ -31,7 +31,7 @@ exports.addComplaint = (req, res) => {
         res.sendStatus(500);
       } else {
         console.log("Scuessfully complaint Saved to database");
-        res.send("Complaint Saved")
+        res.render("complaintSuccess", { userID: req.params.id });
       }
     });
     // console.log(result);
