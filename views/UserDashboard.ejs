@@ -28,7 +28,8 @@
       nav .acc-name {
         padding: 10px;
         border-radius: 50%;
-        background-color: rgb(255, 0, 51);
+        /* background-color: rgb(255, 0, 51); */
+        /* background-color:; */
         border: 0;
         text-transform: uppercase;
         color: aliceblue;
@@ -96,7 +97,9 @@
                 >Add Complaint</a
               >
             </li>
-            <li class="nav-item mx-4"><button class="acc-name">pa</button></li>
+            <li class="nav-item mx-4">
+              <button class="acc-name"><%= userName %></button>
+            </li>
           </ul>
           <a href="#">
             <button class="btn btn-outline-dark logout_btn" type="submit">
@@ -108,31 +111,27 @@
     </nav>
     <div class="container d-flex justify-content-center mt-5">
       <div class="complaints">
+        <% complaints.forEach(e => { %>
         <div class="complaint">
           <div class="date">
             <h6 style="letter-spacing: 1px; font-size: 12px; color: gray">
-              21/04/2003
+              <%=e.date %>
             </h6>
           </div>
           <div class="card" style="width: 22rem">
-            <img
-              src="https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=600"
-              class="card-img-top"
-              alt="..."
-            />
+            <img src="<%=e.imageURL %>" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Water Pipe Leackage</h5>
+              <h5 class="card-title"><%=e.title %></h5>
               <p class="card-text">
-                <span style="font-weight: 500">Address : </span> Some quick
-                example text to build on the card title and make up the bulk of
-                the card's content. <a href=""><i class="bi bi-geo-alt"></i></a>
+                <span style="font-weight: 500">Address : </span> <%=e.address %>
+                <a href="<%= e.gMapURL %>"><i class="bi bi-geo-alt"></i></a>
               </p>
               <button type="button" class="btn btn-outline-dark">
-                Approval : <span>Yes</span>
+                Approval : <span><%= e.approvalStatus %></span>
                 <!-- ~, yes,no -->
               </button>
               <button type="button" class="btn btn-outline-success">
-                Work Status : <span>started</span>
+                Work Status : <span><%= e.workStatus %></span>
                 <!-- started,finished -->
               </button>
               <h6 class="my-3">
@@ -140,7 +139,7 @@
                 <span style="font-weight: 400"
                   ><a href="" style="text-decoration: none">
                     <!-- Redirect to Officers Profile -->
-                    John Cena
+                    <%=e.officerAppointed %>
                   </a></span
                 >
               </h6>
@@ -167,12 +166,32 @@
             </div>
           </div>
         </div>
+        <% }) %>
       </div>
     </div>
     <div class="addbtn-container container">
-      <a href="/<%=userID%>/register-complaint"> <button class="add-btn">+</button> </a>
+      <a href="/<%=userID%>/register-complaint">
+        <button class="add-btn">+</button>
+      </a>
     </div>
     <script>
+      function accNameBgColor() {
+        let userName = document.querySelector("nav .acc-name");
+        let colors = ["red", "black", "blue","green"];
+        let color = Math.random() * colors.length;
+        color = Math.floor(color);
+        //       let str = "1234567890ABCDEF";
+        //       let hex_array = [];
+        //       for (let i = 0; i < 6; i++) {
+        //         let random_value = Math.floor(Math.random() * str.length);
+        //         random_value = str[random_value];
+        //         hex_array.push(random_value);
+        //       }
+        //       let color = "#" + hex_array.join("");
+        userName.style.backgroundColor = colors[color];
+      }
+      accNameBgColor();
+      let color = "#" + hex_array.join("");
       let feedback = document.querySelector(".feedback p");
       let feedback_btn = document.querySelector(".feedback .feedback-btn");
 
