@@ -17,6 +17,6 @@ module.exports = async function (req, res, next) {
       next();
     }
   } catch (error) {
-    res.redirect("/sub-pages/user/login.html");
+    res.redirect("/sub-pages/login.html");
   }
 };

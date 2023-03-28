@@ -28,8 +28,7 @@
       nav .acc-name {
         padding: 10px;
         border-radius: 50%;
-        /* background-color: rgb(255, 0, 51); */
-        /* background-color:; */
+        background-color: rgb(0, 0, 201);
         border: 0;
         text-transform: uppercase;
         color: aliceblue;
@@ -101,7 +100,7 @@
               <button class="acc-name"><%= userName %></button>
             </li>
           </ul>
-          <a href="#">
+          <a>
             <button class="btn btn-outline-dark logout_btn" type="submit">
               Logout
             </button>
@@ -111,7 +110,9 @@
     </nav>
     <div class="container d-flex justify-content-center mt-5">
       <div class="complaints">
-        <% complaints.forEach(e => { %>
+        <% if (complaints.length==0) { %>
+        <div>No Complaints Registered ⚠️</div>
+        <% } else { %> <% complaints.forEach(e => { %>
         <div class="complaint">
           <div class="date">
             <h6 style="letter-spacing: 1px; font-size: 12px; color: gray">
@@ -166,7 +167,7 @@
             </div>
           </div>
         </div>
-        <% }) %>
+        <% }) %> <% } %>
       </div>
     </div>
     <div class="addbtn-container container">
@@ -175,23 +176,6 @@
       </a>
     </div>
     <script>
-      function accNameBgColor() {
-        let userName = document.querySelector("nav .acc-name");
-        let colors = ["red", "black", "blue","green"];
-        let color = Math.random() * colors.length;
-        color = Math.floor(color);
-        //       let str = "1234567890ABCDEF";
-        //       let hex_array = [];
-        //       for (let i = 0; i < 6; i++) {
-        //         let random_value = Math.floor(Math.random() * str.length);
-        //         random_value = str[random_value];
-        //         hex_array.push(random_value);
-        //       }
-        //       let color = "#" + hex_array.join("");
-        userName.style.backgroundColor = colors[color];
-      }
-      accNameBgColor();
-      let color = "#" + hex_array.join("");
       let feedback = document.querySelector(".feedback p");
       let feedback_btn = document.querySelector(".feedback .feedback-btn");
 
@@ -211,7 +195,6 @@
       });
       let logout_btn = document.querySelector(".logout_btn");
       logout_btn.addEventListener("click", () => {
-        console.log("clicked", document.cookie);
         document.cookie =
           "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
         location.reload(); // to reload page
