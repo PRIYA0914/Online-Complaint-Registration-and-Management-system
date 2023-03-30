@@ -146,9 +146,8 @@
               </h6>
               <div class="feedback">
                 <p>Feedback : <i class="bi bi-pen-fill"></i></p>
-                <form action="" method="post">
+                <form action="" method="post" style="display: none">
                   <textarea
-                    style="display: none"
                     required
                     name=""
                     id=""
@@ -156,7 +155,7 @@
                     rows="5"
                   ></textarea>
                   <button
-                    style="display: none"
+                    style="float: right"
                     type="submit"
                     class="btn btn-primary btn-sm feedback-btn"
                   >
@@ -176,29 +175,28 @@
       </a>
     </div>
     <script>
-      let feedback = document.querySelector(".feedback p");
-      let feedback_btn = document.querySelector(".feedback .feedback-btn");
-
-      let feedback_form = document.querySelector(".feedback textarea");
-      feedback.addEventListener("click", () => {
-        // toogle feedbackform
-        if (feedback_form.style.display === "none") {
-          feedback_form.style.display = "unset";
-
-          feedback_btn.style.display = "unset";
-          feedback_btn.style.float = "right";
-        } else {
-          feedback_form.style.display = "none";
-
-          feedback_btn.style.display = "none";
-        }
-      });
       let logout_btn = document.querySelector(".logout_btn");
       logout_btn.addEventListener("click", () => {
         document.cookie =
           "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
         location.reload(); // to reload page
       });
+  
+      let feedback = document.querySelectorAll(".feedback p");
+      let feedback_form = document.querySelectorAll(".feedback form");
+for (let i = 0; i < feedback.length; i++) {
+feedback[i].addEventListener("click",()=>{
+     if (feedback_form[i].style.display === "none") {
+          feedback_form[i].style.display = "unset";
+
+        
+        } else {
+          feedback_form[i].style.display = "none";
+
+        }
+})  
+}
+     
     </script>
   </body>
 </html>
