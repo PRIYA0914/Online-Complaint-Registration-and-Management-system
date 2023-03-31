@@ -43,7 +43,8 @@ app.use("/user", require("./routes/User/dashboard"));
 // adding user-complaint
 app.use("/", require("./routes/User/complaintForm-get"));
 app.use("/", require("./routes/User/complaintForm-post"));
-
+// deleting user-complaint
+app.use("/",require("./routes/User/deleteComplaint"))
 app.use("/officer/login", require("./routes/Officer/login-post"));
 app.use("/officer/signup", require("./routes/Officer/signup-post"));
 app.use("/admin/login", require("./routes/Admin/login-post"));

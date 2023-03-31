@@ -127,11 +127,11 @@
                 <span style="font-weight: 500">Address : </span> <%=e.address %>
                 <a href="<%= e.gMapURL %>"><i class="bi bi-geo-alt"></i></a>
               </p>
-              <button type="button" class="btn btn-outline-dark">
+              <button type="button" class="btn btn-outline-dark btn-sm">
                 Approval : <span><%= e.approvalStatus %></span>
                 <!-- ~, yes,no -->
               </button>
-              <button type="button" class="btn btn-outline-success">
+              <button type="button" class="btn btn-outline-success btn-sm">
                 Work Status : <span><%= e.workStatus %></span>
                 <!-- started,finished -->
               </button>
@@ -163,6 +163,13 @@
                   </button>
                 </form>
               </div>
+              <div class="delete-complaint">
+                <form action="/delete-complaint/<%=e.id%>" method="post">
+                  <button type="submit" class="btn btn-dark btn-sm">
+                    Delete <i class="bi bi-trash"></i>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -181,22 +188,18 @@
           "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
         location.reload(); // to reload page
       });
-  
+
       let feedback = document.querySelectorAll(".feedback p");
       let feedback_form = document.querySelectorAll(".feedback form");
-for (let i = 0; i < feedback.length; i++) {
-feedback[i].addEventListener("click",()=>{
-     if (feedback_form[i].style.display === "none") {
-          feedback_form[i].style.display = "unset";
-
-        
-        } else {
-          feedback_form[i].style.display = "none";
-
-        }
-})  
-}
-     
+      for (let i = 0; i < feedback.length; i++) {
+        feedback[i].addEventListener("click", () => {
+          if (feedback_form[i].style.display === "none") {
+            feedback_form[i].style.display = "unset";
+          } else {
+            feedback_form[i].style.display = "none";
+          }
+        });
+      }
     </script>
   </body>
 </html>
