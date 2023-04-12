@@ -8,21 +8,9 @@
     <!-- icon -->
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
     <!-- bootstrap cdn -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
     <!-- css -->
     <style>
       nav .acc-name {
@@ -75,35 +63,20 @@
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item pt-1">
-              <a
-                class="nav-link active"
-                href="/<%=userID%>/register-complaint"
-                style="font-weight: 500"
-                >Add Complaint</a
-              >
+              <a class="nav-link active" href="/<%=userID%>/register-complaint" style="font-weight: 500">Add Complaint</a>
             </li>
             <li class="nav-item mx-4">
               <button class="acc-name"><%= userName %></button>
             </li>
           </ul>
           <a>
-            <button class="btn btn-outline-dark logout_btn" type="submit">
-              Logout
-            </button>
+            <button class="btn btn-outline-dark logout_btn" type="submit">Logout</button>
           </a>
         </div>
       </div>
@@ -112,19 +85,18 @@
       <div class="complaints">
         <% if (complaints.length==0) { %>
         <div>No Complaints Registered ⚠️</div>
-        <% } else { %> <% complaints.forEach(e => { %>
+        <% } else { %> <% complaints.forEach(e=> { %>
         <div class="complaint">
           <div class="date">
-            <h6 style="letter-spacing: 1px; font-size: 12px; color: gray">
-              <%=e.date %>
-            </h6>
+            <h6 style="letter-spacing: 1px; font-size: 12px; color: gray"><%=e.date %></h6>
           </div>
           <div class="card" style="width: 22rem">
             <img src="<%=e.imageURL %>" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title"><%=e.title %></h5>
               <p class="card-text">
-                <span style="font-weight: 500">Address : </span> <%=e.address %>
+                <span style="font-weight: 500">Address : </span>
+                <%=e.address %>
                 <a href="<%= e.gMapURL %>"><i class="bi bi-geo-alt"></i></a>
               </p>
               <button type="button" class="btn btn-outline-dark btn-sm">
@@ -147,27 +119,13 @@
               <div class="feedback">
                 <p>Feedback : <i class="bi bi-pen-fill"></i></p>
                 <form action="" method="post" style="display: none">
-                  <textarea
-                    required
-                    name=""
-                    id=""
-                    cols="35"
-                    rows="5"
-                  ></textarea>
-                  <button
-                    style="float: right"
-                    type="submit"
-                    class="btn btn-primary btn-sm feedback-btn"
-                  >
-                    Send
-                  </button>
+                  <textarea required name="" id="" cols="35" rows="5"></textarea>
+                  <button style="float: right" type="submit" class="btn btn-primary btn-sm feedback-btn">Send</button>
                 </form>
               </div>
               <div class="delete-complaint">
                 <form action="/delete-complaint/<%=e.id%>" method="post">
-                  <button type="submit" class="btn btn-dark btn-sm">
-                    Delete <i class="bi bi-trash"></i>
-                  </button>
+                  <button type="submit" class="btn btn-dark btn-sm">Delete <i class="bi bi-trash"></i></button>
                 </form>
               </div>
             </div>
@@ -184,8 +142,7 @@
     <script>
       let logout_btn = document.querySelector(".logout_btn");
       logout_btn.addEventListener("click", () => {
-        document.cookie =
-          "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
+        document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // deleting cookie
         location.reload(); // to reload page
       });
 
