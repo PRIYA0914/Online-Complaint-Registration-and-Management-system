@@ -56,6 +56,7 @@
     <div class="container complaints d-flex justify-content-center mt-3">
         <div>
             <% complaints.forEach(e=> { %>
+                 
                 <form action="/admin-complaint/<%=e._id %>" method="post">
                     <div class="date">
                         <p>
@@ -88,7 +89,7 @@
                                                 justify-content-between">
                                 <div>
                                     <p style="font-weight:500;">Approval
-                                        :
+                                        :-
                                     </p>
                                 </div>
 
@@ -248,6 +249,10 @@
                         </div>
                     </div>
                 </form>
+                <div class="d-flex justify-content-end"> <form  action="/delete-complaint/<%=e.id%>" method="post" name="myform">
+                  <button type="submit" class="btn btn-dark btn-sm" name="dashboard" value="adminDashboard"> <i class="bi bi-trash"></i></button>
+                </form></div>
+                
                 <% }) %>
 
         </div>

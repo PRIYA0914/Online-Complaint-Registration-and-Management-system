@@ -1,15 +1,22 @@
 const Complaint = require("../../models/Complaint-schema");
 const mongoose = require("mongoose");
+
 exports.deleteComplaint = (req, res) => {
-  // res.send(req.params.id)
+  var dashboard = req.body.dashboard;
   Complaint.findByIdAndDelete(req.params.id, (err, docs) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
-    }else{
-res.redirect("back");
+    } else {
+      if (dashboard == "userDashboard") {
+        console.log("userDashboard");
+        res.redirect("back");
+      } else if (dashboard == "adminDashboard") {
+                res.sendFile(__dirname + "/deleteComplaintSuccess.html");
 
-        console.log("Complaint Deleted Successfully");
+        console.log("Admindashboard");
+      }
+      console.log("Complaint Deleted Successfully");
     }
   });
 };
