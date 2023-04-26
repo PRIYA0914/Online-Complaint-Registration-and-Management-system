@@ -49,6 +49,8 @@ app.use("/admin/login", require("./routes/Admin/login-post"));
 app.use("/", require("./routes/Admin/commite-change-post"));
 // Admin-return-dashboard-after-alter-complaint
 app.use("/admin-return-dashboard", require("./routes/Admin/return-dashboard"));
+// Admin user list
+app.use("/admin/user-list", require("./routes/Admin/userlist"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
