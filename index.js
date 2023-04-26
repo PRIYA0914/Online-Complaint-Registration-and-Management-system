@@ -47,6 +47,8 @@ app.use("/officer/signup", require("./routes/Officer/signup-post"));
 app.use("/admin/login", require("./routes/Admin/login-post"));
 // Admin-altering-complaints
 app.use("/", require("./routes/Admin/commite-change-post"));
+// Admin-return-dashboard-after-alter-complaint
+app.use("/admin-return-dashboard", require("./routes/Admin/return-dashboard"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

@@ -52,19 +52,8 @@
         </div>
 
     </nav>
-    <div class="container dropdown-container mt-3">
-        <div class="dropdown">
-            <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Sort by
-            </a>
 
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">default</a></li>
-                <li><a class="dropdown-item" href="#">newest</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="container complaints d-flex justify-content-center">
+    <div class="container complaints d-flex justify-content-center mt-3">
         <div>
             <% complaints.forEach(e=> { %>
                 <form action="/admin-complaint/<%=e._id %>" method="post">
