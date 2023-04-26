@@ -1,7 +1,7 @@
 const Admin=require("../../models/Authentication/Admin-schema")
 const Complaints=require("../../models/Complaint-schema")
 const mongoose=require("mongoose")
-let doc=
+var doc=
 Complaints.find((err,docs)=>{
     doc=docs
 })

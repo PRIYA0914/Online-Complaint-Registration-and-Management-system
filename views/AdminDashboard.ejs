@@ -43,7 +43,7 @@
                     <a class="nav-link active" href="#">Appoint Officer</a>
                 </li>
             </ul>
-            <a >
+            <a>
                 <button class="btn btn-outline-light logout_btn" type="submit">
                     Logout
                 </button>
@@ -67,10 +67,11 @@
     <div class="container complaints d-flex justify-content-center">
         <div>
             <% complaints.forEach(e=> { %>
-                <form action="/admin-complaint" method="post">
+                <form action="/admin-complaint/<%=e._id %>" method="post">
                     <div class="date">
                         <p>
                             <%= e.date %>
+                            
                         </p>
                     </div>
                     <div class="card border-dark mb-3" style="max-width:
@@ -107,7 +108,7 @@
                                                         form-check-inline">
                                         <input class="form-check-input
                                                             border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
+                                                            border-secondary" type="radio" name="approval"
                                             id="inlineRadio1" value="Pending" checked>
                                         <label class="form-check-label" for="inlineRadio1">Pending</label>
                                     </div>
@@ -115,7 +116,7 @@
                                                         form-check-inline">
                                         <input class="form-check-input
                                                             border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
+                                                            border-secondary" type="radio" name="approval"
                                             id="inlineRadio1" value="Yes">
                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
                                     </div>
@@ -123,79 +124,85 @@
                                                         form-check-inline">
                                         <input class="form-check-input
                                                             border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
+                                                            border-secondary" type="radio" name="approval"
                                             id="inlineRadio2" value="No">
                                         <label class="form-check-label" for="inlineRadio2">No</label>
                                     </div>
-
+<!-- Approval -->
                                     <% } else if (e.approvalStatus==="Yes" ) { %>
                                         <div class="form-check
-                                                        form-check-inline">
+                                                            form-check-inline">
                                             <input class="form-check-input
-                                                            border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
-                                                id="inlineRadio1" value="Pending">
+                                                                border
+                                                                border-secondary" type="radio"
+                                                name="approval" id="inlineRadio1" value="Pending">
                                             <label class="form-check-label" for="inlineRadio1">Pending</label>
                                         </div>
                                         <div class="form-check
-                                                        form-check-inline">
+                                                            form-check-inline">
                                             <input class="form-check-input
-                                                            border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
-                                                id="inlineRadio1" value="Yes" checked>
+                                                                border
+                                                                border-secondary" type="radio"
+                                                name="approval" id="inlineRadio1" value="Yes" checked>
                                             <label class="form-check-label" for="inlineRadio1">Yes</label>
                                         </div>
                                         <div class="form-check
-                                                        form-check-inline">
+                                                            form-check-inline">
                                             <input class="form-check-input
-                                                            border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
-                                                id="inlineRadio2" value="No">
+                                                                border
+                                                                border-secondary" type="radio"
+                                                name="approval" id="inlineRadio2" value="No">
                                             <label class="form-check-label" for="inlineRadio2">No</label>
                                         </div>
 
                                         <% } else { %>
 
                                             <div class="form-check
-                                                        form-check-inline">
+                                                                form-check-inline">
                                                 <input class="form-check-input
-                                                            border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio1" value="Pending">
+                                                                    border
+                                                                    border-secondary" type="radio"
+                                                    name="approval" id="inlineRadio1" value="Pending">
                                                 <label class="form-check-label" for="inlineRadio1">Pending</label>
                                             </div>
                                             <div class="form-check
-                                                        form-check-inline">
+                                                                form-check-inline">
                                                 <input class="form-check-input
-                                                            border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio1" value="Yes">
+                                                                    border
+                                                                    border-secondary" type="radio"
+                                                    name="approval" id="inlineRadio1" value="Yes">
                                                 <label class="form-check-label" for="inlineRadio1">Yes</label>
                                             </div>
                                             <div class="form-check
-                                                        form-check-inline">
+                                                                form-check-inline">
                                                 <input class="form-check-input
-                                                            border
-                                                            border-secondary" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio2" value="No" checked>
+                                                                    border
+                                                                    border-secondary" type="radio"
+                                                    name="approval" id="inlineRadio2" value="No" checked>
                                                 <label class="form-check-label" for="inlineRadio2">No</label>
                                             </div>
                                             <% } %>
 
                             </div>
+<div class="current_work_status">
+    <p style="font-weight:500;">Current Work Status : <span style="font-weight:400;color: rgb(71, 70, 70);"><%= e.workStatus %></span></p>
+</div>
+
                             <div class="workStatus
                                                                 d-flex
                                                                 justify-content-between">
                                 <div>
-                                    <p style="font-weight:500;">Work
+                                    <p style="font-weight:500;">Set Work
                                         Status
                                         :
                                     </p>
                                 </div>
                                 <div>
                                     <select name="workStatus">
-                                        <option value="free">~</option>
-                                        <option value="starter">Work
+                                        <option>~</option>
+                                          <option value="-">Unset
+                                        </option>
+                                        <option value="Started">Work
                                             Started
                                         </option>
                                         <option value="professional">Work
@@ -211,21 +218,25 @@
                                                                             text-dark
                                                                             ms-3">👀</button></a></div>
                             </div>
+                            <div class="appointed_officer">
+    <p style="font-weight:500;">Appointed Officer : <span style="font-weight:400;color: rgb(71, 70, 70);"><%= e.officerAppointed %></span></p>
+</div>
                             <div class="officerAppointed
                                                                 d-flex
                                                                 justify-content-start">
                                 <div>
-                                    <p style="font-weight:500;">Officer
-                                        Appointed
+                                    <p style="font-weight:500;">Appoint Officer
+                                      
                                         :
                                     </p>
                                 </div>
                                 <div class="ms-3">
-                                    <select name="workStatus">
-                                        <option value="not-appointed">Not-Appointed</option>
-                                        <option value="starter">parvesh
+                                    <select name="officer">
+                                        <option>~</option>
+                                        <option value="-">Unselect</option>
+                                        <option value="Parvesh">Parvesh
                                         </option>
-                                        <option value="professional">kaja</option>
+                                        <option value="Kaja">Kaja</option>
                                     </select>
                                 </div>
                             </div>
@@ -254,9 +265,10 @@
 
     </div>
     <script>
-        let logout_btn=document.querySelector(".logout_btn")
-        logout_btn.addEventListener("click",()=>{
- window.location.replace("/sub-pages/login.html");        }
+        let logout_btn = document.querySelector(".logout_btn")
+        logout_btn.addEventListener("click", () => {
+            window.location.replace("/sub-pages/login.html");
+        }
         )
     </script>
 </body>
