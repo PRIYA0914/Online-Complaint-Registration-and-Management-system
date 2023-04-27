@@ -20,8 +20,12 @@
           <input type="email" name="officerEmail" class="form-control" id="floatingPassword" placeholder="email Id" required />
           <label for="floatingPassword">Email Id</label>
         </div>
+        <div class="input-group flex-nowrap mb-3">
+          <span class="input-group-text" id="addon-wrapping">+ 91</span>
+          <input type="text" class="form-control" placeholder="Phone No"  aria-describedby="addon-wrapping" name="officerPhone" pattern="[0-9]{10}" required />
+        </div>
         <div class="form-floating mb-3">
-          <input  type="text" name="officerId" class="form-control" id="floatingPassword" placeholder="Officer Id" pattern="[0-9]{6}" required/>
+          <input type="text" name="officerId" class="form-control" id="floatingPassword" placeholder="Officer Id" pattern="[0-9]{6}" required />
           <label for="floatingPassword">6 digit Officer Id</label>
         </div>
         <div class="mb-3"><label class="input-group-text" for="photo">Select Aadhaar Proof :</label><input type="file" class="form-control" id="photo" name="aadhaar" required /></div>
