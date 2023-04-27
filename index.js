@@ -51,6 +51,10 @@ app.use("/", require("./routes/Admin/commite-change-post"));
 app.use("/admin-return-dashboard", require("./routes/Admin/return-dashboard"));
 // Admin user list
 app.use("/admin/user-list", require("./routes/Admin/userlist"));
+// Admin user dashboard & delete
+app.use("/", require("./routes/Admin/user-dashboard-delete"));
+// Admin Appointing officer
+app.use("/admin/appoint-officer",require("./routes/Admin/appoint-officer"))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

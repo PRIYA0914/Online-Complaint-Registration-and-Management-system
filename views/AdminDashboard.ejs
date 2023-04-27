@@ -40,7 +40,7 @@
                     <a class="nav-link active" href="#">Officer List</a>
                 </li>
                 <li class="nav-item pt-1 pe-4">
-                    <a class="nav-link active" href="#">Appoint Officer</a>
+                    <a class="nav-link active" href="/admin/appoint-officer">Appoint Officer</a>
                 </li>
             </ul>
             <a>
@@ -56,15 +56,15 @@
     <div class="container complaints d-flex justify-content-center mt-3">
         <div>
             <% complaints.forEach(e=> { %>
-                 
+
                 <form action="/admin-complaint/<%=e._id %>" method="post">
                     <div class="date">
                         <p>
                             <%= e.date %>
-                            
+
                         </p>
                     </div>
-                    <div class="card border-dark mb-3" style="max-width:
+                    <div class="card border-dark mb-1" style="max-width:
                                 25rem;">
                         <div class="card-header bg-transparent
                                     border-success">
@@ -118,30 +118,30 @@
                                             id="inlineRadio2" value="No">
                                         <label class="form-check-label" for="inlineRadio2">No</label>
                                     </div>
-<!-- Approval -->
+                                    <!-- Approval -->
                                     <% } else if (e.approvalStatus==="Yes" ) { %>
                                         <div class="form-check
                                                             form-check-inline">
                                             <input class="form-check-input
                                                                 border
-                                                                border-secondary" type="radio"
-                                                name="approval" id="inlineRadio1" value="Pending">
+                                                                border-secondary" type="radio" name="approval"
+                                                id="inlineRadio1" value="Pending">
                                             <label class="form-check-label" for="inlineRadio1">Pending</label>
                                         </div>
                                         <div class="form-check
                                                             form-check-inline">
                                             <input class="form-check-input
                                                                 border
-                                                                border-secondary" type="radio"
-                                                name="approval" id="inlineRadio1" value="Yes" checked>
+                                                                border-secondary" type="radio" name="approval"
+                                                id="inlineRadio1" value="Yes" checked>
                                             <label class="form-check-label" for="inlineRadio1">Yes</label>
                                         </div>
                                         <div class="form-check
                                                             form-check-inline">
                                             <input class="form-check-input
                                                                 border
-                                                                border-secondary" type="radio"
-                                                name="approval" id="inlineRadio2" value="No">
+                                                                border-secondary" type="radio" name="approval"
+                                                id="inlineRadio2" value="No">
                                             <label class="form-check-label" for="inlineRadio2">No</label>
                                         </div>
 
@@ -151,32 +151,35 @@
                                                                 form-check-inline">
                                                 <input class="form-check-input
                                                                     border
-                                                                    border-secondary" type="radio"
-                                                    name="approval" id="inlineRadio1" value="Pending">
+                                                                    border-secondary" type="radio" name="approval"
+                                                    id="inlineRadio1" value="Pending">
                                                 <label class="form-check-label" for="inlineRadio1">Pending</label>
                                             </div>
                                             <div class="form-check
                                                                 form-check-inline">
                                                 <input class="form-check-input
                                                                     border
-                                                                    border-secondary" type="radio"
-                                                    name="approval" id="inlineRadio1" value="Yes">
+                                                                    border-secondary" type="radio" name="approval"
+                                                    id="inlineRadio1" value="Yes">
                                                 <label class="form-check-label" for="inlineRadio1">Yes</label>
                                             </div>
                                             <div class="form-check
                                                                 form-check-inline">
                                                 <input class="form-check-input
                                                                     border
-                                                                    border-secondary" type="radio"
-                                                    name="approval" id="inlineRadio2" value="No" checked>
+                                                                    border-secondary" type="radio" name="approval"
+                                                    id="inlineRadio2" value="No" checked>
                                                 <label class="form-check-label" for="inlineRadio2">No</label>
                                             </div>
                                             <% } %>
 
                             </div>
-<div class="current_work_status">
-    <p style="font-weight:500;">Current Work Status : <span style="font-weight:400;color: rgb(71, 70, 70);"><%= e.workStatus %></span></p>
-</div>
+                            <div class="current_work_status">
+                                <p style="font-weight:500;">Current Work Status : <span
+                                        style="font-weight:400;color: rgb(71, 70, 70);">
+                                        <%= e.workStatus %>
+                                    </span></p>
+                            </div>
 
                             <div class="workStatus
                                                                 d-flex
@@ -190,7 +193,7 @@
                                 <div>
                                     <select name="workStatus">
                                         <option>~</option>
-                                          <option value="-">Unset
+                                        <option value="-">Unset
                                         </option>
                                         <option value="Started">Work
                                             Started
@@ -209,14 +212,17 @@
                                                                             ms-3">👀</button></a></div>
                             </div>
                             <div class="appointed_officer">
-    <p style="font-weight:500;">Appointed Officer : <span style="font-weight:400;color: rgb(71, 70, 70);"><%= e.officerAppointed %></span></p>
-</div>
+                                <p style="font-weight:500;">Appointed Officer : <span
+                                        style="font-weight:400;color: rgb(71, 70, 70);">
+                                        <%= e.officerAppointed %>
+                                    </span></p>
+                            </div>
                             <div class="officerAppointed
                                                                 d-flex
                                                                 justify-content-start">
                                 <div>
                                     <p style="font-weight:500;">Appoint Officer
-                                      
+
                                         :
                                     </p>
                                 </div>
@@ -235,12 +241,9 @@
                                                             bg-transparent
                                                             border-success
                                                             d-flex
-                                                            justify-content-between">
-                            <a href=""><button type="button" class="btn
-                                                                    btn-outline-dark
-                                                                    btn-sm
-                                                                    "><i class="bi bi-person-circle"></i>  User-Profile</button>
-                            </a>
+                                                            justify-content-end">
+
+
                             <button type="submit" class="btn
                                                                 btn-primary
                                                                 btn-sm
@@ -249,10 +252,23 @@
                         </div>
                     </div>
                 </form>
-                <div class="d-flex justify-content-end"> <form  action="/delete-complaint/<%=e.id%>" method="post" name="myform">
-                  <button type="submit" class="btn btn-dark btn-sm" name="dashboard" value="adminDashboard"> <i class="bi bi-trash"></i></button>
-                </form></div>
-                
+                <div class="d-flex justify-content-between" style="margin-bottom: 15px;">
+                    <form action="/admin-user-dashboard-delete" method="post">
+                        <button type="submit" class="btn
+                                                                    btn-outline-dark
+                                                                    btn-sm
+                                                                    " name="button" value="dashboard" ><i
+                                class="bi bi-person-circle"></i> User-Profile</button>
+                                <input type="hidden"
+                                                        name="userId" value="<%=
+                                                        e.userID %>">
+                    </form>
+                    <form action="/delete-complaint/<%=e.id%>" method="post" name="myform">
+                        <button type="submit" class="btn btn-dark btn-sm" name="dashboard" value="adminDashboard"> <i
+                                class="bi bi-trash"></i></button>
+                    </form>
+                </div>
+
                 <% }) %>
 
         </div>

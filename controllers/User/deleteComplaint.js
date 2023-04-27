@@ -12,9 +12,13 @@ exports.deleteComplaint = (req, res) => {
         console.log("userDashboard");
         res.redirect("back");
       } else if (dashboard == "adminDashboard") {
-                res.sendFile(__dirname + "/deleteComplaintSuccess.html");
+        res.sendFile(__dirname + "/deleteComplaintSuccess.html");
 
         console.log("Admindashboard");
+      } else if (dashboard == "AdminUserDashboard") {
+        console.log("AdminUserDashboard");
+                res.sendFile(__dirname + "/deleteComplaintSuccess.html");
+
       }
       console.log("Complaint Deleted Successfully");
     }
