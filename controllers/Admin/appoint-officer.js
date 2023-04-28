@@ -1,3 +1,3 @@
 exports.appoint_officer=(req,res)=>{
-    res.send("Appoint officer")
+    res.sendFile(__dirname+"/appoint-officer.html")
 }
