@@ -37,9 +37,6 @@
                     <a class="nav-link active" href="/admin/user-list">User list</a>
                 </li>
                 <li class="nav-item pt-1 pe-4">
-                    <a class="nav-link active" href="#">Officer List</a>
-                </li>
-                <li class="nav-item pt-1 pe-4">
                     <a class="nav-link active" href="/admin/appoint-officer">Appoint Officer</a>
                 </li>
             </ul>
@@ -198,7 +195,7 @@
                                         <option value="Started">Work
                                             Started
                                         </option>
-                                        <option value="professional">Work
+                                        <option value="Finished">Work
                                             Finished</option>
                                     </select>
                                 </div>
@@ -230,9 +227,9 @@
                                     <select name="officer">
                                         <option>~</option>
                                         <option value="-">Unselect</option>
-                                        <option value="Parvesh">Parvesh
-                                        </option>
-                                        <option value="Kaja">Kaja</option>
+                                       <% officers.forEach(e => { %>
+                                         <option value="<%= e.officerName %>"><%= e.officerName %></option>
+                                       <% }) %>
                                     </select>
                                 </div>
                             </div>

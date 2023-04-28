@@ -43,7 +43,6 @@ app.use("/", require("./routes/User/complaintForm-post"));
 // deleting user-complaint
 app.use("/", require("./routes/User/deleteComplaint"));
 app.use("/officer/login", require("./routes/Officer/login-post"));
-app.use("/officer/signup", require("./routes/Officer/signup-post"));
 app.use("/admin/login", require("./routes/Admin/login-post"));
 // Admin-altering-complaints
 app.use("/", require("./routes/Admin/commite-change-post"));
@@ -55,27 +54,10 @@ app.use("/admin/user-list", require("./routes/Admin/userlist"));
 app.use("/", require("./routes/Admin/user-dashboard-delete"));
 // Admin Appointing officer
 app.use("/admin/appoint-officer",require("./routes/Admin/appoint-officer"))
+app.use("/appoint-officer", require("./routes/Admin/appoint-officer-post"));
+// Officer updating complaint 
+app.use("/officer-update-complaint", require("./routes/Officer/update-complaint"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-// <--Try it -->
-// app.get("/users", async (request, response) => {
-//   const users = await userModel.find({});
 
-//   try {
-//     response.send(users);
-//   } catch (error) {
-//     response.status(500).send(error);
-//   }
-// });
-
-// app.post("/add_user", async (request, response) => {
-//     const user = new userModel(request.body);
-
-//     try {
-//       await user.save();
-//       response.send(user);
-//     } catch (error) {
-//       response.status(500).send(error);
-//     }
-// });
