@@ -6,7 +6,7 @@ const fileUplaod = require("express-fileupload");
 
 const app = express();
 require("dotenv").config(); // for environment variables
-const port = 3000;
+const port = 3001;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -16,18 +16,18 @@ app.set("view engine", "ejs"); // seting the engine for ejs
 // MongoDB database connection
 
 const uri = process.env.mongoDB;
-function database_connection() {
+const database_connection = async () => {
   try {
-    mongoose.set("strictQuery", false);
-
-    mongoose.connect(uri, () => {
-      console.log("Successfully connected to DB");
-    });
-  } catch (error) {
-    console.log(`error in database connection ${error}`);
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("Connected to MongoDB");
+  } catch (err) {
+    console.error("Database connection error:", err);
   }
-}
+};
+
+// Call it asynchronously
 database_connection();
+
 app.use(
   fileUplaod({
     useTempFiles: true,
